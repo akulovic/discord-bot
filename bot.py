@@ -30,4 +30,9 @@ async def ping(ctx):
     await ctx.send(f'Pong! Latency: {round(bot.latency * 1000)}ms')
 
 # Get token from environment variable
-bot.run(os.getenv('DISCORD_TOKEN'))
+if __name__ == "__main__":
+    token = os.getenv("DISCORD_TOKEN")
+    if not token:
+        raise RuntimeError("DISCORD_TOKEN is not set")
+
+    bot.run(token)
