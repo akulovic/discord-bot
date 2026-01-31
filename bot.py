@@ -31,13 +31,3 @@ async def ping(ctx):
 
 # Get token from environment variable
 bot.run(os.getenv('DISCORD_TOKEN'))
-```
-
-**`requirements.txt`** (tells Railway what to install):
-```
-discord.py==2.3.2
-```
-
-**`Procfile`** (tells Railway how to run your bot):
-```
-worker: python bot.py
